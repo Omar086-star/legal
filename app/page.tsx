@@ -5,8 +5,8 @@ import { Footer } from "@/components/footer"
 import {
   Scale,
   Users,
-  FileText,
-  Building2,
+  // FileText,
+  // Building2,
   Gavel,
   ShieldCheck,
   ArrowLeft,
@@ -27,18 +27,18 @@ const services = [
     description:
       "نتولى جميع قضايا الأسرة بما في ذلك الطلاق، الحضانة، والنفقة بسرية تامة.",
   },
-  {
-    icon: FileText,
-    title: "صياغة العقود",
-    description:
-      "صياغة ومراجعة العقود التجارية والمدنية بدقة عالية لحماية مصالحك.",
-  },
-  {
-    icon: Building2,
-    title: "الملكيات والعقارات",
-    description:
-      "خدمات قانونية شاملة في مجال العقارات والملكيات ونقل الملكية.",
-  },
+  // {
+  //   icon: FileText,
+  //   title: "صياغة العقود",
+  //   description:
+  //     "صياغة ومراجعة العقود التجارية والمدنية بدقة عالية لحماية مصالحك.",
+  // },
+  // {
+  //   icon: Building2,
+  //   title: "الملكيات والعقارات",
+  //   description:
+  //     "خدمات قانونية شاملة في مجال العقارات والملكيات ونقل الملكية.",
+  // },
   {
     icon: Gavel,
     title: "قضايا الأحوال المدنية",
