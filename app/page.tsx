@@ -84,12 +84,12 @@ export default function HomePage() {
       <main>
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-primary">
-          <div className="absolute inset-0">
+          <div className="absolute inset-20">
             <Image
-              src="/images/hero-legal.jpg"
+              src="/hero.png"
               alt="مكتب قانوني احترافي"
               fill
-              className="object-cover opacity-20"
+              className=" opacity-80"
               priority
             />
           </div>
@@ -107,7 +107,7 @@ export default function HomePage() {
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
                 <a
-                  href="https://calendar.google.com"
+                  href="https://calendar.app.google/PPNxWeXdyoXJfqJX9"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-lg bg-secondary px-6 py-3 text-base font-semibold text-secondary-foreground transition-colors hover:bg-secondary/80"
@@ -208,7 +208,7 @@ export default function HomePage() {
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <a
-                href="https://calendar.google.com"
+                href="https://calendar.app.google/PPNxWeXdyoXJfqJX9"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg bg-secondary px-6 py-3 text-base font-semibold text-secondary-foreground transition-colors hover:bg-secondary/80"

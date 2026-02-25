@@ -11,28 +11,28 @@ const contactInfo = [
   {
     icon: Phone,
     title: "الهاتف",
-    value: "+966 50 000 0000",
-    href: "tel:+966500000000",
+    value: "    +963985230608",
+    href: "    +963985230608",
     dir: "ltr" as const,
   },
   {
     icon: Mail,
     title: "البريد الإلكتروني",
-    value: "info@legal-services.com",
+    value: "info@nakhla-found.com",
     href: "mailto:info@legal-services.com",
     dir: "ltr" as const,
   },
   {
     icon: MapPin,
     title: "العنوان",
-    value: "الرياض، المملكة العربية السعودية",
-    href: "https://maps.google.com/?q=Riyadh+Saudi+Arabia",
+    value: "  ديرالزور  حي الرصافة       ",
+    href: "https://www.google.com/maps/place/Hettin,+Gouvernorat+de+Deir+ez-Zor,+Syrie/@35.3238411,40.1407798,15z/data=!3m1!4b1!4m6!3m5!1s0x1548178e9260bc7b:0x1b33ad7e3b468204!8m2!3d35.3228736!4d40.152025!16s%2Fg%2F1hhhrpx5p?entry=ttu&g_ep=EgoyMDI2MDIyMi4wIKXMDSoASAFQAw%3D%3D",
     dir: "rtl" as const,
   },
   {
     icon: Clock,
     title: "ساعات العمل",
-    value: "الأحد - الخميس: 9 صباحًا - 5 مساءً",
+    value: "الأحد - الخميس: 9 صباحًا -3 مساءً",
     href: undefined,
     dir: "rtl" as const,
   },
@@ -47,13 +47,25 @@ export default function ContactPage() {
     message: "",
   })
 
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault()
-    const mailtoLink = `mailto:info@legal-services.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
-      `الاسم: ${formData.name}\nالهاتف: ${formData.phone}\nالبريد: ${formData.email}\n\n${formData.message}`
-    )}`
-    window.open(mailtoLink)
+async function handleSubmit(e: React.FormEvent) {
+  e.preventDefault()
+
+  const res = await fetch("/api/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(formData),
+  })
+
+  if (res.ok) {
+    alert("تم إرسال رسالتك بنجاح ✅")
+    setFormData({ name: "", phone: "", email: "", subject: "", message: "" })
+    return
   }
+
+  const data = await res.json().catch(() => ({}))
+  alert(data?.error || "فشل إرسال الرسالة. حاول مرة أخرى.")
+}
+
 
   return (
     <>
@@ -251,7 +263,7 @@ export default function ContactPage() {
                     للاستفسارات السريعة، تواصل معنا مباشرة عبر واتساب
                   </p>
                   <a
-                    href="https://wa.me/966500000000"
+                    href="https://wa.me/963985230608"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-6 inline-flex items-center gap-2 rounded-lg bg-secondary px-5 py-2.5 text-sm font-semibold text-secondary-foreground transition-colors hover:bg-secondary/80"
@@ -261,19 +273,19 @@ export default function ContactPage() {
                   </a>
                 </div>
 
-                {/* Google Maps Embed */}
-                <div className="flex-1 overflow-hidden rounded-xl border border-border">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d463876.0143812785!2d46.54263715!3d24.7253981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2sRiyadh%20Saudi%20Arabia!5e0!3m2!1sar!2s!4v1700000000000!5m2!1sar!2s"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0, minHeight: 300 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="موقع المكتب على الخريطة"
-                  />
-                </div>
+{/* Google Maps Embed */}
+<div className="flex-1 overflow-hidden rounded-xl border border-border">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d862.238372748681!2d40.147699595564674!3d35.32161301717895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1772022721211!5m2!1sfr!2sfr"
+    width="100%"
+    height="100%"
+    style={{ border: 0, minHeight: 300 }}
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    title="موقع المكتب على الخريطة"
+  />
+</div>
 
                 {/* Book Appointment */}
                 <div className="rounded-xl border border-border bg-card p-8 text-center">

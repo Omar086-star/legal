@@ -1,8 +1,9 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
-import { Menu, X, Scale } from "lucide-react"
+import { Menu, X } from "lucide-react"
 
 const navLinks = [
   { href: "/", label: "الرئيسية" },
@@ -17,9 +18,20 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-            <Scale className="h-5 w-5 text-primary-foreground" />
+        {/* Brand */}
+        <Link
+          href="/"
+          className="flex items-center gap-3"
+          onClick={() => setIsOpen(false)}
+        >
+          <div className="relative h-10 w-10 overflow-hidden rounded-lg ">
+            <Image
+              src="/logo.png"
+              alt="شعار المستشار القانوني"
+              fill
+              className="object-contain p-1"
+              priority
+            />
           </div>
           <span className="text-xl font-bold text-foreground">
             المستشار القانوني
@@ -50,7 +62,7 @@ export function Navbar() {
         {/* Mobile Toggle */}
         <button
           type="button"
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => setIsOpen((v) => !v)}
           className="md:hidden text-foreground"
           aria-label={isOpen ? "إغلاق القائمة" : "فتح القائمة"}
         >

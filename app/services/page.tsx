@@ -44,7 +44,7 @@ const testimonials = [
     name: "خالد الراشد",
     role: "مستثمر عقاري",
     content:
-      "خبرة واسعة في مجال العقارات. ساعدوني في إتمام عدة صفقات عقارية بنجاح.",
+      "خبرة واسعة في مجال الاستشارات القانونية. ساعدوني في إتمام عدة   عقود وشراكات ناجحة.",
     rating: 5,
   },
 ]
@@ -79,7 +79,7 @@ export default function HomePage() {
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
                 <a
-                  href="https://calendar.google.com"
+                  href="https://calendar.app.google/PPNxWeXdyoXJfqJX9"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-lg bg-secondary px-6 py-3 text-base font-semibold text-secondary-foreground transition-colors hover:bg-secondary/80"
@@ -180,7 +180,7 @@ export default function HomePage() {
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <a
-                href="https://calendar.google.com"
+                href="https://calendar.app.google/PPNxWeXdyoXJfqJX9"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg bg-secondary px-6 py-3 text-base font-semibold text-secondary-foreground transition-colors hover:bg-secondary/80"

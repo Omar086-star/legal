@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { Scale, Phone, Mail, MapPin } from "lucide-react"
+import Image from "next/image"
+import { Phone, Mail, MapPin } from "lucide-react"
 
 export function Footer() {
   return (
@@ -8,14 +9,21 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-4">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary">
-                <Scale className="h-5 w-5 text-secondary-foreground" />
+            <Link href="/" className="flex items-center gap-3">
+              <div className="relative h-10 w-10  rounded-lg ">
+                <Image
+                  src="/logol.png"
+                  alt="شعار المستشار القانوني"
+                  fill
+                  className="object-contain "
+                  priority
+                />
               </div>
               <span className="text-xl font-bold text-primary-foreground">
                 المستشار القانوني
               </span>
-            </div>
+            </Link>
+
             <p className="mt-4 text-sm leading-relaxed text-primary-foreground/70">
               نقدم خدمات قانونية متكاملة بأعلى معايير الجودة والاحترافية. نسعى
               لتحقيق العدالة وحماية حقوق عملائنا.
@@ -128,6 +136,7 @@ export function Footer() {
                   +963985230608
                 </a>
               </li>
+
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-secondary" />
                 <a
@@ -137,6 +146,7 @@ export function Footer() {
                   info@nakhla-found.com
                 </a>
               </li>
+
               <li className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-secondary" />
                 <span className="text-sm text-primary-foreground/70">
@@ -149,8 +159,7 @@ export function Footer() {
 
         <div className="mt-12 border-t border-primary-foreground/10 pt-8 text-center">
           <p className="text-sm text-primary-foreground/50">
-            {"جميع الحقوق محفوظة"} &copy; {new Date().getFullYear()}{" "}
-            {"المستشار القانوني"}
+            جميع الحقوق محفوظة &copy; {new Date().getFullYear()} المستشار القانوني
           </p>
         </div>
       </div>
