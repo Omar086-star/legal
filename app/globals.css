@@ -63,9 +63,13 @@
     --sidebar-ring: 285 65% 45%;
   }
 }
-.bg-lait{
-  background-color: #ffffffd1;
+
+@media (max-width:776px) {
+  .vu-lait{
+  height:30% !important ;
 }
+}
+
 @layer base {
   * {
     @apply border-border;

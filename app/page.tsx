@@ -89,7 +89,7 @@ export default function HomePage() {
               src="/hero.png"
               alt="مكتب قانوني احترافي"
               fill
-              className=" opacity-80"
+              className="vu-lait opacity-80"
               priority
             />
           </div>
